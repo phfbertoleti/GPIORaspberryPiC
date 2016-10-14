@@ -1,5 +1,6 @@
 # GPIO - Raspberry Pi (em linguagem C)
 Repositório contendo exemplo básico de acionamento e leitura de GPIO em C na Raspberry Pi
+Clone este repositório para seu Raspberry Pi com o seguinte comando: git clone https://github.com/phfbertoleti/GPIORaspberryPiC
 
 Observações:
 
