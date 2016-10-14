@@ -1,23 +1,23 @@
-//Codigo-fonte exemplo: manipulaÁ„o de I/Os
-//DescriÁ„o: leitura de dois botıes e controle de dois LEDs (on/off)
+//Codigo-fonte exemplo: manipula√ß√£o de I/Os
+//Descri√ß√£o: leitura de dois bot√µes e controle de dois LEDs (on/off)
 //Autor: Pedro Bertoleti
 //Data: Outubro/2016
 //
 //Observacoes:
 //1) Antes de compilar, instale a biblioteca wiringPi (https://learn.sparkfun.com/tutorials/raspberry-gpio#c-wiringpi-setup)
 //2) Compile o programa com o seguinte comando: gcc -o ex ex.c -l wiringPi
-//3) ApÛs compilar, rode o programa com o seguinte comando: ./ex
+//3) Ap√≥s compilar, rode o programa com o seguinte comando: ./ex
 
 
 #include <stdio.h>    
-#include <wiringPi.h> //header para utilizar funÁıes da wiringPi
+#include <wiringPi.h> //header para utilizar fun√ß√µes da wiringPi
 
 //defines
-//numeros dos pinos, n„o dos GPIOs!
-#define PINO_INPUT_B1   16   
-#define PINO_INPUT_B2   17
-#define PINO_OUTPUT_L1  23
-#define PINO_OUTPUT_L2  18
+//numeros dos dos GPIOs!
+#define PINO_INPUT_B1   27    //GPIO16   
+#define PINO_INPUT_B2   17    //GPIO17
+#define PINO_OUTPUT_L1  23    //GPIO23
+#define PINO_OUTPUT_L2  18    //GPIO18
 
 //variaveis globais
 int DutyCiclePWM;
@@ -30,7 +30,7 @@ Implementacoes
 ***************/
 
 //Funcao: configura os GPIO (I/Os)
-//Par‚metros: nenhum
+//Par√¢metros: nenhum
 //Retorno: nenhum
 void ConfiguraIOs(void)
 {
@@ -40,7 +40,7 @@ void ConfiguraIOs(void)
     pinMode(PINO_INPUT_B1, INPUT);   
     pinMode(PINO_INPUT_B2, INPUT);  
 
-    //habilita pull-up nos inputs (portanto, se apertado o botao, a Raspberry Pi ler· 0 como entrada)
+    //habilita pull-up nos inputs (portanto, se apertado o botao, a Raspberry Pi ler√° 0 como entrada)
     pullUpDnControl(PINO_INPUT_B1, PUD_UP); 
     pullUpDnControl(PINO_INPUT_B2, PUD_UP);
 }
@@ -79,7 +79,7 @@ int main( int argc, char *argv[] )
         }
         else
         {
-            //botao 2 n„o est· pressionado. Apaga LED2            
+            //botao 2 n√£o est√° pressionado. Apaga LED2            
             digitalWrite(PINO_OUTPUT_L2, LOW); 
         }
     }
